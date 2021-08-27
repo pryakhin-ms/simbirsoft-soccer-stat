@@ -1,9 +1,13 @@
 import React from 'react';
 import Sidebar from './Sidebar';
+import LeaguesTab from './LeaguesTab';
 
 function App() {
   return (
-    <Sidebar />
+    <>
+      <Sidebar />
+      <LeaguesTab />
+    </>
   );
 }
 
