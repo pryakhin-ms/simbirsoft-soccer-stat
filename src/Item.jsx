@@ -1,12 +1,13 @@
 import React from 'react';
 import football from './img/football.png';
 
-function Item() {
+function Item(props) {
+  const { league } = props;
   return (
     <>
       <div className="col">
         <div className="card shadow-sm">
-          <h5 className="card-header">Text Above</h5>
+          <h5 className="card-header">{league.code}</h5>
           <img src={football} className="card-img-top" width="100%" height="225" focusable="false" alt="" />
           <div className="card-body">
             <p className="card-text">Some info about league</p>

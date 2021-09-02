@@ -4,7 +4,7 @@ import Sidebar from './Sidebar';
 import LeaguesTab from './LeaguesTab';
 
 function App() {
-  const [leaguesData, setLeaguesData] = useState([]);
+  const [leaguesList, setLeaguesData] = useState([]);
   useEffect(async () => {
     const { data: { competitions } } = await axios({
       headers: { 'X-Auth-Token': 'a23f85ec349c4bb0ae562a4ba2b748a8' },
@@ -17,7 +17,7 @@ function App() {
   return (
     <>
       <Sidebar />
-      <LeaguesTab />
+      <LeaguesTab leaguesList={leaguesList} />
     </>
   );
 }
