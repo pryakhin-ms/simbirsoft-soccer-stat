@@ -11,7 +11,7 @@ function App() {
       method: 'get',
       url: 'http://api.football-data.org/v2/competitions?plan=TIER_ONE',
     });
-    console.log(competitions, leaguesData);
+    console.log(competitions);
     setLeaguesData(competitions);
   }, []);
   return (
