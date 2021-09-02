@@ -4,6 +4,7 @@ import Sidebar from './Sidebar';
 import LeaguesTab from './LeaguesTab';
 
 function App() {
+  const [activeTab, setTab] = useState('leagues');
   const [leaguesList, setLeaguesData] = useState([]);
   useEffect(async () => {
     const { data: { competitions } } = await axios({
