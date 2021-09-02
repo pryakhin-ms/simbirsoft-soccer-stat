@@ -1,6 +1,7 @@
 import React from 'react';
 
-function Sidebar() {
+function Sidebar(props) {
+  const { changeActiveTab, activeTab } = props;
   return (
     <div style={{ display: 'flex', height: 'auto' }}>
       <div className="d-flex flex-column flex-shrink-0 p-3 bg-light" style={{ width: '230px' }}>
@@ -10,12 +11,12 @@ function Sidebar() {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-            <a href="/home" className="nav-link active" aria-current="page">
+            <a href="/home" className={activeTab === 'leagues' ? 'nav-link active' : 'nav-link link-dark'} onClick={changeActiveTab}>
               Лиги
             </a>
           </li>
           <li>
-            <a href="/" className="nav-link link-dark">
+            <a href="/" className={activeTab === 'teams' ? 'nav-link active' : 'nav-link link-dark'} onClick={changeActiveTab}>
               Команды
             </a>
           </li>

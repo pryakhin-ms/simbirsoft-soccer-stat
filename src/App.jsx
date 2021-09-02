@@ -15,10 +15,17 @@ function App() {
     console.log(competitions);
     setLeaguesData(competitions);
   }, []);
+
+  const changeActiveTab = (e) => {
+    e.preventDefault();
+    setTab(activeTab === 'leagues' ? 'teams' : 'leagues');
+  };
+
   return (
     <>
-      <Sidebar />
-      <LeaguesTab leaguesList={leaguesList} />
+      <Sidebar changeActiveTab={changeActiveTab} activeTab={activeTab} />
+      {activeTab === 'leagues' && <LeaguesTab leaguesList={leaguesList} />}
+      {activeTab === 'teams' && null}
     </>
   );
 }
