@@ -2,7 +2,7 @@ import React from 'react';
 import Item from './Item';
 import Spinner from './Spinner';
 
-function LeaguesTab(props) {
+function DataTab(props) {
   const { leaguesList, uiState } = props;
   return (
     <div className="container">
@@ -16,4 +16,4 @@ function LeaguesTab(props) {
   );
 }
 
-export default LeaguesTab;
+export default DataTab;
