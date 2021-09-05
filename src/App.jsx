@@ -22,14 +22,20 @@ function App() {
 
   const changeActiveTab = async (e) => {
     e.preventDefault();
+    // Определяется следующий активный таб
     const newTab = activeTab === 'leagues' ? 'teams' : 'leagues';
+    // Функция запрашивает данные и устанавливает их в стейт при смене активного таба
     const setLeaguesOrTeams = async () => {
+      // Определение текущих данных, в зависимости от нового активного таба
       const activeData = newTab === 'leagues' ? leaguesList : teamsList;
+      // Если данные уже есть, то загружать не нужно
       if (activeData.length > 0) {
         console.log(activeData);
         return;
       }
+      // Определение функции для загрузки данных, в зав-ти от нового активного таба
       const fetchFunction = newTab === 'leagues' ? fetchLeagues : fetchTeams;
+      // Определение функции для установки нового состояния, в зав-ти от нового активного таба
       const setStateFunction = newTab === 'leagues' ? setLeaguesData : setTeamsData;
       setUiState('loading');
       try {
