@@ -52,8 +52,12 @@ function App() {
   return (
     <>
       <Sidebar changeActiveTab={changeActiveTab} activeTab={activeTab} />
-      {activeTab === 'leagues' && <DataTab leaguesList={leaguesList} uiState={uiState} />}
-      {activeTab === 'teams' && null}
+      <DataTab
+        activeTab={activeTab}
+        leaguesList={leaguesList}
+        teamsList={teamsList}
+        uiState={uiState}
+      />
     </>
   );
 }
